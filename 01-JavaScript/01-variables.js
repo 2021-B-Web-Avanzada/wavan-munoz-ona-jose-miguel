@@ -87,7 +87,7 @@ if(undefined){
 Objetos JS (JSON) - Arreglos
 =====================
  */
-//creando un objeto
+//creando un objeto, no son JSONs netamente
 const persona = {
     nombre: "Miguel", //lave: valor
     apellido: "Munoz",
@@ -101,3 +101,77 @@ const persona = {
     },
     mascotas: ['bolo','max','luna']
 };
+
+//acceder a las propiedades del objeto con el operador punto
+persona.nombre; //Miguel
+persona.apellido; //Munos
+
+//podemos acceder tambien como si fuera un arreglo por medio de su clave
+persona["nombre"]; // Miguel
+console.log(persona)
+
+//que pasa si queremos acceder a una propiedad que no existe?
+// -> vamos a tener un undefined
+persona.sueldo; //undefined
+console.log(persona.sueldo);
+
+persona.sueldo = 250;
+persona["gastos"] = 100;
+console.log(persona.gastos);
+persona.nombre = undefined;
+console.log(persona)
+console.log(Object.keys(persona)); //keys retorna una lista de las propiedades
+console.log(Object.values(persona)); // values retorna los valores asignados a cada propiedad
+
+//eliminando propiedades
+delete persona.nombre
+console.log(persona)
+
+/*
+=======================
+Variables por valor o referencia
+======================
+ */
+
+//variables por valor en JS son las primitivas: number, string  y boolean
+let miEdad = 32;
+let otraEdad = miEdad; //cuando guardamos una primitiva en otra variable
+//le pasamos el VALOR, no la referencia
+
+console.log(miEdad);
+console.log(otraEdad);
+miEdad += 1;
+console.log(miEdad); //33
+console.log(otraEdad); //32
+
+//variables por referencia: object ({},[])
+// let rafael = {
+//     nombre: "rafael"
+// };
+// let lenin = rafael;
+// console.log(lenin);
+// console.log(rafael);
+// lenin.nombre = "Lenin";
+// console.log(lenin);
+// console.log(rafael);
+// delete rafael.nombre;
+// console.log(lenin);
+// console.log(rafael);
+let rafael  = {
+    nombre: "Rafael"
+}
+//para clonar, usamos la función
+let lenin = Object.assign({},rafael);
+console.log(rafael);
+console.log(lenin);
+lenin.nombre = "lenin";
+delete rafael.nombre;
+console.log(rafael);
+console.log(lenin);
+
+let arregloNumeros = [1,2,3,4,5];
+let arregloClonado = Object.assign([],arregloNumeros);
+arregloNumeros[0] = 200;
+arregloClonado[0] = 100;
+console.log(arregloNumeros);
+console.log(arregloClonado);
