@@ -1,5 +1,10 @@
 <app-banner-imagenes>
 </app-banner-imagenes>
 <p>ruta-login works!</p>
-<app-banner-imagenes>
+
+<!-- DIRECTIVA: NG IF -> ES UN IF -->
+<button (click)="cambiarOcultarBanner()">
+  {{(mostrarSegundoBanner)? 'Ocultar' : 'Mostrar'}}
+</button>
+<app-banner-imagenes *ngIf="mostrarSegundoBanner">
 </app-banner-imagenes>

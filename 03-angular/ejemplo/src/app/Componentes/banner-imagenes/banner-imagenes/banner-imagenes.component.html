@@ -1,2 +1,25 @@
 <h1>Hola desde Banner!</h1>
 
+<!-- INTERPOLACION: TEXTO MUESTRA INTERFAZ -->
+<!-- SINTAXIS: usar dos llaves -->
+<h2>{{nombre}} - {{apellido}}</h2>
+<p>Mascota: {{mascotas.max.edad}}</p>
+
+<!-- PROPERTY BINDING [] -->
+<a [href]="url" target="_blank">Mas Informacion</a>
+<img [src]="urlImg" alt="homero">
+
+<!-- EVENT BINDING -->
+<button (click)="ejecutarEventoClick()"
+        (blur)="ejecutarEventoBlur()">
+  Event Binding
+</button>
+
+<!-- PIPES -->
+<!-- RECIBEN INFORMACION Y LA TRANSFORMAN -->
+
+<p>{{fecha | date }}</p>
+<p>{{sueldo | currency}}</p>
+<pre>
+  {{mascotas|json}}
+</pre>
