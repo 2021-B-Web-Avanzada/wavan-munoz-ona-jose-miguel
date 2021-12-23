@@ -15,6 +15,8 @@ import {EstaLogueadoGuard} from "./servicios/auth/esta-logueado.guard";
 import {EsAdministradorGuard} from "./servicios/auth/es-administrador.guard";
 import {RutaReporteComponent} from "./modulos/modulo-inventario/rutas/ruta-reporte/ruta-reporte.component";
 import {RouterModule} from "@angular/router";
+import {BannerImagenesComponent} from "./Componentes/banner-imagenes/banner-imagenes/banner-imagenes.component";
+import {BannerImagenesModule} from "./Componentes/banner-imagenes/banner-imagenes.module";
 
 @NgModule({
   //Componentes
@@ -26,14 +28,14 @@ import {RouterModule} from "@angular/router";
     RutaInicioComponent,
     RutaUsuarioComponent,
     RutaPostComponent,
-    RutaAppComponent,
-    RutaReporteComponent
+    RutaAppComponent
   ],
   //módulos
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    BannerImagenesModule //esto en el app.module
   ],
   //servicios
   providers: [
