@@ -1,1 +1,1 @@
-[{"id":"Alexander 23-Oh No! Not Again","nombre":"Oh No! Not Again","autor":"Alexander 23","estaEnExposicion":false,"precio":23,"descripcion":"An EP"}]
+[{"id":"Jeremy-CRUSHER","nombre":"CRUSHER","autor":"Jeremy","estaEnExposicion":false,"precio":14.99,"descripcion":""}]
