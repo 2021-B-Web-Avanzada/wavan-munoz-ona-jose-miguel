@@ -12,8 +12,38 @@
   cursor: pointer;
 }
 
-svg{
+#iconoHome{
   height: 1.3rem;
 }
 /*TODO implementar funcionalidad para al hacer click regresar
    al inicio del contenido*/
+
+.tweetBar{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 2%;
+}
+
+.tweetText{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tweetText > textarea{
+  border:none;
+  resize: vertical;
+
+}
+.tweetText > textarea:focus{
+  border:none;
+  outline: none;
+}
+
+.scroll{
+  height: 100%;
+  overflow-y: auto;
+}
+
+

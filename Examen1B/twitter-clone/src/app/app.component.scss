@@ -1,25 +1,19 @@
-.borde-derecho{
-    border-right: 1px #dedede solid;
+.contenedor{
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 100%;
 }
-.con-altura{
-    height: 100%;
-}
-.espaciado{
-    padding-top: 1px;
-    padding-bottom: 2%;
+header{
+  grid-column: 1 / 1;
+  width: 100%;
+  border-right: 1px #dedede solid;
+  display: flex;
+  justify-content: end;
+  height: 100vh;
 }
 
 #narrowSection{
-  width: 80%;
-}
-
-.down{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  height: 100%;
+  width: 85%;
 }
 
 a{
@@ -30,16 +24,29 @@ a{
 a > svg{
   height: 2rem;
 }
+
 a:hover{
   background-color: rgba(29, 155, 240, 0.1);
   border-radius: 100rem;
 }
+
+.down {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 275px;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 2%;
+}
+
 .componentContainer{
   margin: 2px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .botonTuit{
   margin: 4px 0;
   width: 100%;
@@ -50,6 +57,7 @@ a:hover{
   align-items: center;
   justify-content: center;
 }
+
 #textTw{
   font-weight: bold;
   color: white;
@@ -62,9 +70,13 @@ a:hover{
   cursor: pointer;
 }
 
-nav > div{
-  width: 100%;
+.scrollable-content{
+  display: grid;
+  grid-template-columns: 60% 30% 10%;
+  overflow-y: auto;
 }
 
-
-
+main{
+  grid-column: 1/1;
+  border-right: 1px #dedede solid;
+}
