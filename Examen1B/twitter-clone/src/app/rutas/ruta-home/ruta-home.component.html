@@ -1,4 +1,4 @@
-<div class="scroll">
+<div class="section">
   <div class="returnBar">
     <div class="fw-bold fs-5 text">Home</div>
     <div>
@@ -10,12 +10,9 @@
       </svg>
     </div>
   </div>
-  <div class="tweetBar">
-    <app-profile-picture [sqDimensions]="48"
-    style="padding-right: 2.5%"></app-profile-picture>
-    <div class="tweetText">
-      <textarea cols="30" rows="10" placeholder="What's happening?"></textarea>
-    </div>
-  </div>
+  <app-tweet-bar style="width: 100%">
+  </app-tweet-bar>
   <p>ruta-home works!</p>
+
 </div>
+

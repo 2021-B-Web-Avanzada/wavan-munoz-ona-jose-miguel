@@ -1,0 +1,44 @@
+.tweetBar{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 2%;
+}
+
+.inputs{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+span{
+  display: block;
+  overflow-wrap: break-word;
+  min-height: 40px;
+  padding: 2% 0;
+}
+
+span:focus{
+  outline: none;
+  overflow-wrap: break-word;
+}
+
+span[contenteditable="true"]:empty::before{
+  content: "What's happening?";
+  color: gray;
+  font-size: larger;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: 12px;
+}

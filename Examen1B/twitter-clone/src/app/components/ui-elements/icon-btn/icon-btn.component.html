@@ -1,0 +1,14 @@
+<div class="space">
+  <div id="iconCont">
+    <svg viewBox="0 0 24 24">
+      <g>
+        <path *ngFor="let p of svgPath" [attr.d]="p">
+        </path>
+        <circle *ngFor="let c of circleCords" [attr.cx]="c.cx"
+        [attr.cy]="c.cy" [attr.r]="c.r">
+        </circle>
+      </g>
+    </svg>
+  </div>
+</div>
+

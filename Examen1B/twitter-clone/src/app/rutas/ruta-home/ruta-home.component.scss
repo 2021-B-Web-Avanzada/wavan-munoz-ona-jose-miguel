@@ -6,6 +6,9 @@
   align-items: center;
   padding: 0 2%;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .returnBar:hover{
@@ -18,32 +21,13 @@
 /*TODO implementar funcionalidad para al hacer click regresar
    al inicio del contenido*/
 
-.tweetBar{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 0 2%;
-}
-
-.tweetText{
+.section{
   display: flex;
   flex-direction: column;
+  align-items: start;
   width: 100%;
 }
 
-.tweetText > textarea{
-  border:none;
-  resize: vertical;
 
-}
-.tweetText > textarea:focus{
-  border:none;
-  outline: none;
-}
-
-.scroll{
-  height: 100%;
-  overflow-y: auto;
-}
 
 
