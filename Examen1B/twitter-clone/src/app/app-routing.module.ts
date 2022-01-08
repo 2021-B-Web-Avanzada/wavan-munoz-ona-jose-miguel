@@ -7,6 +7,8 @@ import {RutaMessagesComponent} from "./rutas/ruta-messages/ruta-messages.compone
 import {RutaBookmarksComponent} from "./rutas/ruta-bookmarks/ruta-bookmarks.component";
 import {RutaListsComponent} from "./rutas/ruta-lists/ruta-lists.component";
 import {RutaProfileComponent} from "./rutas/ruta-profile/ruta-profile.component";
+import {RutaAllNotificationsComponent} from "./rutas/ruta-all-notifications/ruta-all-notifications.component";
+import {RutaMentionNotificationComponent} from "./rutas/ruta-mention-notification/ruta-mention-notification.component";
 
 const routes: Routes = [
   {
@@ -19,7 +21,17 @@ const routes: Routes = [
   },
   {
     path: "notifications",
-    component: RutaNotificationsComponent
+    component: RutaNotificationsComponent,
+    children:[
+      {
+        path: '',
+        component: RutaAllNotificationsComponent
+      },
+      {
+        path: 'mentions',
+        component: RutaMentionNotificationComponent
+      }
+    ]
   },
   {
     path: "messages",

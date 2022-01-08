@@ -13,6 +13,8 @@ import { RutaMessagesComponent } from './rutas/ruta-messages/ruta-messages.compo
 import { RutaBookmarksComponent } from './rutas/ruta-bookmarks/ruta-bookmarks.component';
 import { RutaListsComponent } from './rutas/ruta-lists/ruta-lists.component';
 import { RutaProfileComponent } from './rutas/ruta-profile/ruta-profile.component';
+import { RutaAllNotificationsComponent } from './rutas/ruta-all-notifications/ruta-all-notifications.component';
+import { RutaMentionNotificationComponent } from './rutas/ruta-mention-notification/ruta-mention-notification.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RutaProfileComponent } from './rutas/ruta-profile/ruta-profile.componen
     RutaMessagesComponent,
     RutaBookmarksComponent,
     RutaListsComponent,
-    RutaProfileComponent
+    RutaProfileComponent,
+    RutaAllNotificationsComponent,
+    RutaMentionNotificationComponent
   ],
   imports: [
     BrowserModule,
