@@ -10,7 +10,7 @@ export class TweetComponent implements OnInit {
   constructor() { }
 
   @Input()
-  profilePic ="";
+  profilePic ="https://pbs.twimg.com/profile_images/1478141668159148033/IOD8SZvx_400x400.jpg";
 
   @Input()
   userName = "WeRateDogs";
