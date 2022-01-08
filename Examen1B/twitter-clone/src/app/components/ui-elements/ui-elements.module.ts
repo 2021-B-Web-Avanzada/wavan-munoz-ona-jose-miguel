@@ -8,6 +8,7 @@ import { TweetComponent } from './tweet/tweet.component';
 import { TweetActionComponent } from './tweet-action/tweet-action.component';
 import { SearchSectionComponent } from './search-section/search-section.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ExploreListComponent } from './explore-list/explore-list.component';
 
 
 
@@ -20,7 +21,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     TweetComponent,
     TweetActionComponent,
     SearchSectionComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ExploreListComponent
   ],
   exports: [
     ProfilePictureComponent,
@@ -30,7 +32,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     TweetComponent,
     TweetActionComponent,
     SearchSectionComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ExploreListComponent
   ],
   imports: [
     CommonModule

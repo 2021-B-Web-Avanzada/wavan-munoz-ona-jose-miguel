@@ -9,3 +9,29 @@ app-search-bar{
   top: 0;
   width: 100%;
 }
+
+app-explore-list{
+  width: 100%;
+}
+
+footer{
+  padding: 0 4%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+footer > a{
+  font-size: small;
+  color: gray;
+  display: block;
+  margin-right: 10px;
+}
+
+footer > a:hover{
+  cursor: pointer;
+  color: gray;
+  text-decoration: underline;
+}
