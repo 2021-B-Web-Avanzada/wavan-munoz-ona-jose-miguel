@@ -1,6 +1,7 @@
-<div class="space">
-  <div id="iconCont">
-    <svg viewBox="0 0 24 24">
+<div class="space" [style]="{'--fillColor': backgroundColor}" >
+  <div class="iconCont">
+    <svg viewBox="0 0 24 24"
+         [ngStyle]="{'fill': fillColor}">
       <g>
         <path *ngFor="let p of svgPath" [attr.d]="p">
         </path>

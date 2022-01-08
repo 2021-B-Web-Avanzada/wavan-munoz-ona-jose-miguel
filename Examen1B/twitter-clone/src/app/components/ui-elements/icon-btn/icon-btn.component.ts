@@ -15,6 +15,12 @@ export class IconBtnComponent implements OnInit {
   @Input()
   circleCords:{cx:number,cy:number,r:number}[] = []
 
+  @Input()
+  fillColor:string = "#1D9BF0FF";
+
+  @Input()
+  backgroundColor:string = "#1D9BF019";
+
   ngOnInit(): void {
   }
 

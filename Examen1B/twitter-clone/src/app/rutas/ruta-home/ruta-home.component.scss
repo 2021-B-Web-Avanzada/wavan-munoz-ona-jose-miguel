@@ -27,7 +27,10 @@
   align-items: start;
   width: 100%;
 }
-
-
+.tweetHolder{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
 

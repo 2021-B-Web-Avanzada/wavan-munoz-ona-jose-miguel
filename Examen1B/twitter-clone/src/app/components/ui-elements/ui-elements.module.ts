@@ -4,6 +4,8 @@ import { ProfilePictureComponent } from './profile-picture/profile-picture.compo
 import { ProfileInfoBtnComponent } from './profile-info-btn/profile-info-btn.component';
 import { TweetBarComponent } from './tweet-bar/tweet-bar.component';
 import { IconBtnComponent } from './icon-btn/icon-btn.component';
+import { TweetComponent } from './tweet/tweet.component';
+import { TweetActionComponent } from './tweet-action/tweet-action.component';
 
 
 
@@ -12,13 +14,17 @@ import { IconBtnComponent } from './icon-btn/icon-btn.component';
     ProfilePictureComponent,
     ProfileInfoBtnComponent,
     TweetBarComponent,
-    IconBtnComponent
+    IconBtnComponent,
+    TweetComponent,
+    TweetActionComponent
   ],
   exports: [
     ProfilePictureComponent,
     ProfileInfoBtnComponent,
     TweetBarComponent,
-    IconBtnComponent
+    IconBtnComponent,
+    TweetComponent,
+    TweetActionComponent
   ],
   imports: [
     CommonModule

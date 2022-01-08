@@ -1,0 +1,57 @@
+.boundary{
+  padding: 2% 2% 0.5%;
+  border-bottom: 1px #dedede solid;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.tweetContent{
+  display: flex;
+  flex-direction: column;
+}
+
+.userData{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: fit-content;
+}
+
+.userData > div{
+  margin-right: 4px;
+  color: gray;
+}
+
+#name{
+  color: black;
+  font-weight: 600;
+}
+
+.reply{
+  color: gray;
+  margin-bottom: 2px;
+}
+
+.reply > a{
+  color: rgb(29, 155, 240);
+}
+
+.reply > a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.description{
+  line-height: 110%;
+}
+
+.buttons{
+  margin-top: 12px;
+  max-width: 425px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
