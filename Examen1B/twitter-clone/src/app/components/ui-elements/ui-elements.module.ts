@@ -9,6 +9,8 @@ import { TweetActionComponent } from './tweet-action/tweet-action.component';
 import { SearchSectionComponent } from './search-section/search-section.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ExploreListComponent } from './explore-list/explore-list.component';
+import { FollowSuggestionComponent } from './follow-suggestion/follow-suggestion.component';
+import { TrendItemComponent } from './trend-item/trend-item.component';
 
 
 
@@ -22,7 +24,9 @@ import { ExploreListComponent } from './explore-list/explore-list.component';
     TweetActionComponent,
     SearchSectionComponent,
     SearchBarComponent,
-    ExploreListComponent
+    ExploreListComponent,
+    FollowSuggestionComponent,
+    TrendItemComponent
   ],
   exports: [
     ProfilePictureComponent,
@@ -33,7 +37,9 @@ import { ExploreListComponent } from './explore-list/explore-list.component';
     TweetActionComponent,
     SearchSectionComponent,
     SearchBarComponent,
-    ExploreListComponent
+    ExploreListComponent,
+    FollowSuggestionComponent,
+    TrendItemComponent
   ],
   imports: [
     CommonModule

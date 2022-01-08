@@ -1,0 +1,18 @@
+.trendContaniner{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px;
+  color: gray;
+  font-size: small;
+}
+
+.trendContaniner:hover{
+  cursor: pointer;
+  background-color: rgb(239,241,241);
+}
+
+.title{
+  color: black;
+  font-size: medium;
+  font-weight: 500;
+}
