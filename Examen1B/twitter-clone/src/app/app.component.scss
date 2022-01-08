@@ -72,11 +72,22 @@ a:hover{
 
 .scrollable-content{
   display: grid;
-  grid-template-columns: 60% 30% 10%;
+  grid-template-columns: 58% 35% 7%;
   overflow-y: auto;
 }
 
 main{
   grid-column: 1/1;
   border-right: 1px #dedede solid;
+}
+
+aside{
+  grid-column: 2/3;
+  display: flex;
+  justify-content: start;
+  padding: 0 6%;
+}
+
+aside > app-search-section{
+  width: 100%;
 }

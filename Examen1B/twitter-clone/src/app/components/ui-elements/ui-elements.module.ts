@@ -6,6 +6,8 @@ import { TweetBarComponent } from './tweet-bar/tweet-bar.component';
 import { IconBtnComponent } from './icon-btn/icon-btn.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { TweetActionComponent } from './tweet-action/tweet-action.component';
+import { SearchSectionComponent } from './search-section/search-section.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 
@@ -16,7 +18,9 @@ import { TweetActionComponent } from './tweet-action/tweet-action.component';
     TweetBarComponent,
     IconBtnComponent,
     TweetComponent,
-    TweetActionComponent
+    TweetActionComponent,
+    SearchSectionComponent,
+    SearchBarComponent
   ],
   exports: [
     ProfilePictureComponent,
@@ -24,7 +28,9 @@ import { TweetActionComponent } from './tweet-action/tweet-action.component';
     TweetBarComponent,
     IconBtnComponent,
     TweetComponent,
-    TweetActionComponent
+    TweetActionComponent,
+    SearchSectionComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule

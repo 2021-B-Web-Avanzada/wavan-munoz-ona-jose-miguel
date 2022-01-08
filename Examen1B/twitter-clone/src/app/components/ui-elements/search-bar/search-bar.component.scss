@@ -1,0 +1,44 @@
+.bar{
+  width: 100%;
+  background-color: white;
+  height: 53px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.rounded-boundary{
+  background-color: #EFF3F4FF;
+  width: 100%;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.svgContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 6%;
+}
+
+.svgContainer > svg {
+  fill: rgb(83, 100, 113);
+  height: 1.25em;
+}
+
+.buscador{
+  line-height: 20px;
+  width: 100%;
+}
+
+.buscador > input{
+  width: 100%;
+  padding: 12px;
+  outline: none;
+  border: none;
+  background: none;
+}
