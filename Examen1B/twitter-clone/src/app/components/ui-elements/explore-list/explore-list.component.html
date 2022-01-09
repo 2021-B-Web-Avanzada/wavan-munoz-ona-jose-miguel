@@ -1,0 +1,18 @@
+<div class="listContainer">
+  <div class="title">
+    <div>
+      <div class="titleText">
+        {{nombreLista}}
+      </div>
+      <app-icon-btn [svgPath]="iconPath"
+                    [fillColor]="fill"
+                    [backgroundColor]="bdColor"
+      *ngIf="hasIcon">
+      </app-icon-btn>
+    </div>
+  </div>
+  <ng-content></ng-content>
+  <div class="ending">
+    Show more
+  </div>
+</div>

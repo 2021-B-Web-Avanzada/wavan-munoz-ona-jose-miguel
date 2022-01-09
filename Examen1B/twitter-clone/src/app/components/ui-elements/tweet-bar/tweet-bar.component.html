@@ -1,0 +1,19 @@
+<div class="tweetBar">
+  <app-profile-picture [sqDimensions]="48"
+                       style="padding-right: 2.5%">
+  </app-profile-picture>
+  <div class="inputs">
+    <span contenteditable="true"></span>
+    <div class="buttons">
+      <div class="actions">
+        <app-icon-btn *ngFor="let item of botones"
+                      [circleCords]="item.circle"
+                      [svgPath]="item.path">
+        </app-icon-btn>
+      </div>
+      <button>
+        Tweet
+      </button>
+    </div>
+  </div>
+</div>

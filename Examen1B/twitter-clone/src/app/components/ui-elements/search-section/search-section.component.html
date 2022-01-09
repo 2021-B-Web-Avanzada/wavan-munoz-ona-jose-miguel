@@ -1,0 +1,33 @@
+<div class="searchCol">
+  <app-search-bar></app-search-bar>
+  <app-explore-list>
+    <app-trend-item *ngFor="let trend of trending"
+    [country]="trend.country"
+    [numTw]="trend.nt"
+    [title]="trend.title"
+    [topic]="trend.topic">
+    </app-trend-item>
+  </app-explore-list>
+  <app-explore-list [hasIcon]="false"
+                    [nombreLista]="'Who to follow'">
+    <app-follow-suggestion>
+    </app-follow-suggestion>
+    <app-follow-suggestion *ngFor="let user of followSugestions"
+    [imgUrl]="user.url"
+    [username]="user.name"
+    [userat]="user.at">
+    </app-follow-suggestion>
+  </app-explore-list>
+  <footer>
+    <a>Terms of Service</a>
+    <a>Privacy Policy</a>
+    <a>Cookie Policy</a>
+    <a>Accessibility</a>
+    <a>Ads info</a>
+    <a>More</a>
+    <a>© 2022 Twitter, Inc.</a>
+  </footer>
+</div>
+
+
+

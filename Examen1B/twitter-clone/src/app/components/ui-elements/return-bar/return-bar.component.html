@@ -1,0 +1,11 @@
+<div class="returnBar">
+  <div class="fw-bold fs-5 text">{{name}}</div>
+  <div>
+    <svg viewBox="0 0 24 24" id="iconoHome">
+      <g>
+        <path *ngFor="let p of svgPath" [attr.d]="p">
+        </path>
+      </g>
+    </svg>
+  </div>
+</div>

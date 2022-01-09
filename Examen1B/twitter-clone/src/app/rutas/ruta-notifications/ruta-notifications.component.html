@@ -1,0 +1,12 @@
+<div class="nav">
+  <app-return-bar [name]="'Notifications'"
+                  [svgPath]="svgPath">
+  </app-return-bar>
+  <div class="tabs">
+    <a [routerLink]="'/notifications'" >All</a>
+    <a [routerLink]="['/notifications','mentions']">Mentions</a>
+  </div>
+</div>
+<router-outlet>
+</router-outlet>
+

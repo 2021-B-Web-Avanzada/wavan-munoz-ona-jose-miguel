@@ -1,0 +1,19 @@
+<div class="section">
+  <app-return-bar></app-return-bar>
+  <app-tweet-bar style="width: 100%">
+  </app-tweet-bar>
+  <div class="tweetHolder">
+    <app-tweet>
+    </app-tweet>
+    <app-tweet *ngFor="let tw of tweets"
+    [description]="tw.description"
+    [profilePic]="tw.profilePic"
+    [repliesTo]="tw.repliesTo"
+    [time]="tw.time"
+    [userAt]="tw.userAt"
+    [userName]="tw.userName">
+    </app-tweet>
+  </div>
+
+</div>
+

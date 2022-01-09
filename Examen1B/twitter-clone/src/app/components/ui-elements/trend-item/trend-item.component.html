@@ -1,0 +1,14 @@
+<div class="trendContaniner">
+  <div *ngIf="country!=undefined">
+    Trending in {{country}}
+  </div>
+  <div *ngIf="topic!=undefined">
+    {{topic}} · Trending
+  </div>
+  <div class="title">
+    {{title}}
+  </div>
+  <div>
+    {{numTw}} Tweets
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="set" [style]="{'--bg-color':bgColor,
+                           '--accent-color': acColor}"
+(click)="cambiarEstado()">
+  <div class="iconContent">
+    <svg viewBox="0 0 24 24" *ngIf="!selected">
+      <g>
+        <path *ngFor="let d of sPath" [attr.d]="d">
+        </path>
+      </g>
+    </svg>
+    <svg viewBox="0 0 24 24" class="selected" *ngIf="selected">
+      <g>
+        <path *ngFor="let d of sPath" [attr.d]="d" [attr.stroke]="acColor" stroke-width="0.7">
+        </path>
+      </g>
+    </svg>
+  </div>
+  <div class="iconCounter" *ngIf="!selected">
+    <span>{{count}}</span>
+  </div>
+  <div class="iconCounterSelected" *ngIf="selected">
+    <span>{{count}}</span>
+  </div>
+</div>

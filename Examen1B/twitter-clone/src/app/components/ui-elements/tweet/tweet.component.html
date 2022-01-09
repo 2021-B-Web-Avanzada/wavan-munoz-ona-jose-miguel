@@ -1,0 +1,26 @@
+<article class="boundary">
+  <app-profile-picture [sqDimensions]="48"
+                       style="padding-right: 2.5%"
+                      [imgPath]="profilePic">
+  </app-profile-picture>
+  <div class="tweetContent">
+    <div class="userData">
+      <div id="name">{{userName}}</div>
+      <div>{{userAt}}</div>
+      <div>·</div>
+      <div>{{time}}</div>
+    </div>
+    <div class="reply" *ngIf="repliesTo!=undefined">
+      Replying to <a>{{repliesTo}}</a>
+    </div>
+    <div class="description">
+      {{description}}
+    </div>
+    <div class="buttons">
+      <app-tweet-action *ngFor="let btn of svgs" [sPath]="btn.path"
+                                                [bgColor]="btn.bgColor"
+                                                [acColor]="btn.acColor">
+      </app-tweet-action>
+    </div>
+  </div>
+</article>

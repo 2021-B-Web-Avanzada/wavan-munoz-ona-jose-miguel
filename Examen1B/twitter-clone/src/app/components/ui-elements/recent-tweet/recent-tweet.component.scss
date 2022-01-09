@@ -1,0 +1,38 @@
+.boundary{
+  padding: 12px 16px;
+  border-bottom: 1px #dedede solid;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  width: 100%;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+
+.iconContainer{
+  display: flex;
+  flex-direction: row;
+  padding-right: 2%;
+  justify-content: end;
+  flex-basis: 48px;
+}
+
+.iconContainer >svg {
+  height: 1.8em;
+  fill: #794BC4;
+}
+
+.tweetInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+.rt{
+  margin-bottom: 8px;
+}
+
+.desc{
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  color: gray;
+}

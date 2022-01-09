@@ -1,0 +1,59 @@
+.set{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.set:hover{
+  cursor: pointer;
+}
+
+.iconContent{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px;
+  border-radius: 100%;
+  margin-left: -8px;
+  margin-right: 2px;
+}
+
+.iconContent svg{
+  height: 1.23rem;
+  fill: gray;
+}
+
+.iconContent svg.selected{
+  height: 1.23rem;
+  fill: var(--accent-color);
+}
+
+
+.set:hover .iconContent{
+  background-color: var(--bg-color);
+}
+
+.set:hover .iconContent > svg{
+  fill: var(--accent-color);
+}
+
+.iconCounter{
+  height: 100%;
+  color: gray;
+}
+
+.iconCounter > span {
+  display: block;
+  text-align: center;
+  font-size: small;
+  font-weight: 450;
+}
+
+.set:hover .iconCounter{
+  color: var(--accent-color);
+}
+
+.iconCounterSelected{
+  height: 100%;
+  color: var(--accent-color);
+}

@@ -1,0 +1,14 @@
+<div>
+    <a [routerLink]="link">
+        <svg viewBox="0 0 24 24">
+          <g>
+            <path *ngFor="let path of svgPath" [attr.d]="path">
+            </path>
+          </g>
+        </svg>
+        <div>
+          {{textoAMostrar}}
+        </div>
+    </a>
+</div>
+
