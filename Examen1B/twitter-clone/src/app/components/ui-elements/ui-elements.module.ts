@@ -12,6 +12,7 @@ import { ExploreListComponent } from './explore-list/explore-list.component';
 import { FollowSuggestionComponent } from './follow-suggestion/follow-suggestion.component';
 import { TrendItemComponent } from './trend-item/trend-item.component';
 import { ReturnBarComponent } from './return-bar/return-bar.component';
+import { RecentTweetComponent } from './recent-tweet/recent-tweet.component';
 
 
 
@@ -28,7 +29,8 @@ import { ReturnBarComponent } from './return-bar/return-bar.component';
     ExploreListComponent,
     FollowSuggestionComponent,
     TrendItemComponent,
-    ReturnBarComponent
+    ReturnBarComponent,
+    RecentTweetComponent
   ],
   exports: [
     ProfilePictureComponent,
@@ -42,7 +44,8 @@ import { ReturnBarComponent } from './return-bar/return-bar.component';
     ExploreListComponent,
     FollowSuggestionComponent,
     TrendItemComponent,
-    ReturnBarComponent
+    ReturnBarComponent,
+    RecentTweetComponent
   ],
   imports: [
     CommonModule

@@ -1,1 +1,10 @@
-<p>ruta-mention-notification works!</p>
+<div class="tweetContent">
+  <app-tweet *ngFor="let rsp of tweets"
+  [userName]="rsp.userName"
+  [userAt]="rsp.userAt"
+  [time]="rsp.time"
+  [repliesTo]="rsp.repliesTo"
+  [profilePic]="rsp.profilePic"
+  [description]="rsp.description">
+  </app-tweet>
+</div>
