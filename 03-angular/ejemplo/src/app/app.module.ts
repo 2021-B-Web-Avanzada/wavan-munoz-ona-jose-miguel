@@ -19,6 +19,7 @@ import {BannerImagenesComponent} from "./Componentes/banner-imagenes/banner-imag
 import {BannerImagenesModule} from "./Componentes/banner-imagenes/banner-imagenes.module";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
 
 @NgModule({
   //Componentes
@@ -30,7 +31,8 @@ import {FormsModule} from "@angular/forms";
     RutaInicioComponent,
     RutaUsuarioComponent,
     RutaPostComponent,
-    RutaAppComponent
+    RutaAppComponent,
+    RutaUsuarioPerfilComponent
   ],
   //módulos
   imports: [

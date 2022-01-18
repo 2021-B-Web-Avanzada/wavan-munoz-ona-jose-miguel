@@ -20,15 +20,37 @@ export class RutaUsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute
-      .queryParams
-      .subscribe(
-        (queryParams)=>{
-          this.buscarUsuario = queryParams['name']
-          this.buscarUsuarios();
+    const parametrosConsulta$ = this.activatedRoute
+      .queryParams;
+
+    parametrosConsulta$
+      .subscribe( //aqui empieza a ejecutarse el observable
+        {
+          next: (queryParams)=>{ //try
+            this.buscarUsuario = queryParams['name']
+            this.buscarUsuarios();
+            },
+          error: () => {
+            //catch
+          },
+          complete: () => {
+            //finally
+          }
         }
       )
     //this.buscarUsuarios();
+  }
+
+  actualizarParametrosDeConsulta(){
+    this.router
+      .navigate(
+        ['/app', 'usuario'], //armamos la URL /app/usuario,
+        {
+          queryParams: {
+            name: this.buscarUsuario //?name=Miguel
+          }
+        }
+      );
   }
 
   buscarUsuarios() {
