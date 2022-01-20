@@ -18,7 +18,7 @@ import {RouterModule} from "@angular/router";
 import {BannerImagenesComponent} from "./Componentes/banner-imagenes/banner-imagenes/banner-imagenes.component";
 import {BannerImagenesModule} from "./Componentes/banner-imagenes/banner-imagenes.module";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
 
 @NgModule({
@@ -41,7 +41,8 @@ import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usu
     RouterModule,
     BannerImagenesModule, //esto en el app.module
     HttpClientModule,
-    FormsModule
+    FormsModule, //esta es para los template forms
+    ReactiveFormsModule
   ],
   //servicios
   providers: [
