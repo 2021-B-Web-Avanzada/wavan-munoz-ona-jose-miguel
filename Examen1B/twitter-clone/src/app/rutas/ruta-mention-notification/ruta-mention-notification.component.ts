@@ -11,7 +11,7 @@ export class RutaMentionNotificationComponent implements OnInit {
 
   tweets = [
     {
-      profilePic: "https://pbs.twimg.com/profile_images/1471271019780268033/Jhk3iQiK_400x400.jpg",
+      profilePic: "https://pbs.twimg.com/profile_images/1482225736874352642/Xp0vSrVk_400x400.jpg",
       userName: "JJ",
       userAt: "@Jmisterjay1",
       time:"22h",

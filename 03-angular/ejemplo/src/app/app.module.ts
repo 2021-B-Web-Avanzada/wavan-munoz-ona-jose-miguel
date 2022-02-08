@@ -28,6 +28,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { ModalEjemploComponent } from './Componentes/modales/modal-ejemplo/modal-ejemplo.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
+import {SocketIoModule} from "ngx-socket-io";
 
 @NgModule({
   //Componentes
@@ -58,7 +59,11 @@ import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
-    NgbButtonsModule
+    NgbButtonsModule,
+    SocketIoModule.forRoot({
+      url: 'ws://localhost:8080',
+      options: {}
+    })
   ],
   //servicios
   providers: [
