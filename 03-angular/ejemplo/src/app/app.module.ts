@@ -18,7 +18,17 @@ import {RouterModule} from "@angular/router";
 import {BannerImagenesComponent} from "./Componentes/banner-imagenes/banner-imagenes/banner-imagenes.component";
 import {BannerImagenesModule} from "./Componentes/banner-imagenes/banner-imagenes.module";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
+import {InputSwitchModule} from "primeng/inputswitch";
+import {KnobModule} from "primeng/knob";
+import {SplitButtonModule} from "primeng/splitbutton";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule} from "@angular/material/button";
+import { ModalEjemploComponent } from './Componentes/modales/modal-ejemplo/modal-ejemplo.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {NgbButtonsModule} from "@ng-bootstrap/ng-bootstrap";
+import {SocketIoModule} from "ngx-socket-io";
 
 @NgModule({
   //Componentes
@@ -30,7 +40,9 @@ import {FormsModule} from "@angular/forms";
     RutaInicioComponent,
     RutaUsuarioComponent,
     RutaPostComponent,
-    RutaAppComponent
+    RutaAppComponent,
+    RutaUsuarioPerfilComponent,
+    ModalEjemploComponent
   ],
   //módulos
   imports: [
@@ -39,7 +51,19 @@ import {FormsModule} from "@angular/forms";
     RouterModule,
     BannerImagenesModule, //esto en el app.module
     HttpClientModule,
-    FormsModule
+    FormsModule, //esta es para los template forms
+    ReactiveFormsModule,
+    InputSwitchModule,
+    KnobModule,
+    SplitButtonModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    NgbButtonsModule,
+    SocketIoModule.forRoot({
+      url: 'ws://localhost:8080',
+      options: {}
+    })
   ],
   //servicios
   providers: [
