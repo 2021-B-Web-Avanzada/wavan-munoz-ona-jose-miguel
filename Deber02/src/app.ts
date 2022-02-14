@@ -2,16 +2,18 @@ import express from 'express';
 import {initializeApp} from 'firebase-admin/app'
 import { applicationDefault } from 'firebase-admin/app';
 import {getFirestore} from 'firebase-admin/firestore'
-
+import cors from 'cors'
+import * as dotenv from 'dotenv'
 initializeApp({
     credential: applicationDefault()
 })
-
+dotenv.config();
 const db = getFirestore();
 const app = express();
 const port = 3000;
 
 app.listen(port, () => console.log(`API en el puerto ${port}`));
+app.use(cors())
 app.use(express.json());
 
 //obtener un museo por ID
@@ -109,6 +111,25 @@ app.post('/museo/:idM/obra', (req,res)=>{
     });
 });
 
+//listar todas las obreas de un museo
+app.get('/museo/:idM/obras', (req,res)=>{
+    const {idM} = req.params;
+    const obrasRef = db.collection("museos")
+    .doc(idM).collection("obras")
+    .get().then(
+        (querySnapshot) => {
+            let obras: FirebaseFirestore.DocumentData[] = [];
+            querySnapshot.forEach((doc)=>{
+                obras.push(doc.data());
+            })
+            res.status(200).send(obras);
+        }
+    )
+    .catch((err)=>{
+        res.status(501).send(err);
+    })
+});
+
 //leer obras de museo por sus ID
 app.get('/museo/:idM/obra/:idO', (req,res)=>{
     const{idM, idO} = req.params;
@@ -174,3 +195,46 @@ app.get('/obras', (req,res) =>{
         res.status(501).send(err);
     })
 });
+
+app.get('/museos', (req,res) =>{
+    const qParams = req.query
+    const referencia = db.collection('museos');
+    if (qParams['nombre']){
+        referencia.where('nombre', '==',qParams['nombre']).get()
+        .then(
+            (snapshot) =>{
+                let museos: FirebaseFirestore.DocumentData[] = [];
+                if(snapshot.empty){
+                    res.status(404).send();
+                }
+                else{
+                    snapshot.forEach((doc) => {
+                        museos.push({...doc.data(), id: doc.id});
+                    })
+                    res.status(200).send(museos);
+                }
+            }
+        )
+        .catch(
+            (err) =>{
+                res.status(501).send(err);
+            }
+        );
+    }else{
+        referencia.get()
+        .then(
+            (querySnapshot) =>{
+                let museos: FirebaseFirestore.DocumentData[] = [];
+                querySnapshot.forEach((doc)=>{
+                    museos.push({...doc.data(), id: doc.id});
+                })
+                res.status(200).send(museos);
+        })
+        .catch(
+            (err) => {
+                res.status(501).send(err);
+            }
+        );
+    }
+    
+})

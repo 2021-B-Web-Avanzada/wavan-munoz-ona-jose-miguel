@@ -1,0 +1,36 @@
+<section *ngIf="formGroup">
+  <h1>Nuevo museo</h1>
+  <form [formGroup]="formGroup" (ngSubmit)="enviarDatos()">
+    <mat-form-field appearance="fill">
+      <mat-label>Identificador</mat-label>
+      <input matInput formControlName="idMuseo">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del museo</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="direccion">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Hora de apertura (formato de 24h)</mat-label>
+      <input matInput type="number"
+             formControlName="horaApertura">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Costo de entrada</mat-label>
+      <input matInput type="number"
+             formControlName="costoEntrada">
+    </mat-form-field>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!formGroup.valid"
+    >
+      Registrar museo
+    </button>
+  </form>
+</section>
+
+

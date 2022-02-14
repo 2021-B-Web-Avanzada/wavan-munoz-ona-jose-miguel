@@ -1,0 +1,25 @@
+<section *ngIf="infoMuseo && listaObras">
+  <h1>Obras disponibles en {{infoMuseo.nombre}}</h1>
+  <mat-card *ngFor="let obra of listaObras">
+    <mat-card-subtitle>Obra</mat-card-subtitle>
+    <mat-card-title>{{obra.nombre}}</mat-card-title>
+    <mat-card-content>
+      <p>
+        Autor: {{obra.autor}} <br>
+        Precio: {{obra.precio}} <br>
+        Esta en exposición: {{obra.enExposicion}} <br>
+        Descripción: {{obra.descripcion}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button (click)="editarObra(obra.id)">
+        Editar
+      </button>
+      <button mat-button color="warn"
+              (click)="eliminarObra(obra)"
+      >
+        Eliminar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>
