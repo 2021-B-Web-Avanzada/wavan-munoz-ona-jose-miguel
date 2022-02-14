@@ -1,0 +1,39 @@
+<section>
+  <div class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Buscar</mat-label>
+      <input matInput placeholder="Introduce un nombre de museo"
+      [(ngModel)]="terminoBusqueda">
+    </mat-form-field>
+    <button mat-raised-button color="primary"  (click)="cambiarUrl()">
+      Buscar</button>
+  </div>
+
+  <mat-card *ngFor="let museo of listaMuseos">
+    <mat-card-subtitle>Museo</mat-card-subtitle>
+    <mat-card-title>{{museo.nombre}}</mat-card-title>
+    <mat-card-content>
+      <p>
+        Id del museo: {{museo.id}} <br>
+        Hora de apertura: {{museo.horaApertura}} <br>
+        Dirección: {{museo.direccion}} <br>
+        Costo de entrada: {{museo.costoEntrada}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button color="primary"
+              (click)="verObrasMuseo(museo.id)"
+      >
+        Ver obras
+      </button>
+      <button mat-button (click)="editarMuseo(museo.id)">
+        Editar
+      </button>
+      <button mat-button color="warn"
+              (click)="eliminarMuseo(museo)"
+      >
+        Eliminar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

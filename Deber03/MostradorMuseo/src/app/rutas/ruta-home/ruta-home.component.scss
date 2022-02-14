@@ -1,0 +1,21 @@
+.form{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 60%;
+}
+
+.form > mat-form-field{
+  width: 75%;
+}
+
+button{
+  height: 52.06px;
+  margin: .25em 0;
+}
+
+mat-card{
+  width: 85%;
+  margin-bottom: 10px;
+}

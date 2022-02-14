@@ -1,0 +1,53 @@
+<section *ngIf="formGroup">
+  <h1 *ngIf="!esParaEdicion">Nueva obra</h1>
+  <h1 *ngIf="esParaEdicion">Editar obra</h1>
+  <form [formGroup]="formGroup" (ngSubmit)="enviarObra()">
+    <mat-form-field appearance="fill">
+      <mat-label>Identificador del museo</mat-label>
+      <mat-select formControlName="idMuseo">
+        <mat-option *ngFor="let museo of listaMuseos"
+                    [value]="museo.id"
+        >
+          {{museo.nombre}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Identificador de la obra</mat-label>
+      <input matInput formControlName="idObra">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre de la obra</mat-label>
+      <input matInput formControlName="nombreObra">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del autor</mat-label>
+      <input matInput formControlName="nombreAutor">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="descripcion"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Precio</mat-label>
+      <input matInput type="number" formControlName="precio">
+    </mat-form-field>
+    <mat-checkbox formControlName="enExpo">Está en exposición</mat-checkbox>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!formGroup.valid"
+            *ngIf="!esParaEdicion"
+    >
+      Registrar obra
+    </button>
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!formGroup.valid"
+            *ngIf="esParaEdicion"
+    >
+      Listo
+    </button>
+  </form>
+</section>

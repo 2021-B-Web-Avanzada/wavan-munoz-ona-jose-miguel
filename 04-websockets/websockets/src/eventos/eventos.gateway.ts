@@ -24,4 +24,40 @@ export class EventosGateway{
             )
         return 'ok';
     }
+
+    @SubscribeMessage('unirseSala')
+    unirseSala(
+        @MessageBody()
+        message: {salaId:string, nombre:string},
+        @ConnectedSocket()
+        socket:Socket
+    ){
+        const mensajeAEnviar = {
+            mensaje: `Bienvenido ${message.nombre}`
+        };
+        socket.join(message.salaId)
+        socket.broadcast
+            .to(message.salaId)
+            .emit(
+                'escucharEventoUnirseSala',
+                mensajeAEnviar
+            );
+        return 'ok';
+    }
+
+    @SubscribeMessage('enviarMensaje')
+    enviarMensaje(
+        @MessageBody()
+            message: {salaId:string, nombre:string, mensaje:string},
+        @ConnectedSocket()
+            socket:Socket
+    ){
+        const nuevoMensaje = {
+            nombre: message.nombre,
+            mensaje: message.mensaje,
+            salaId: message.salaId
+        } as any;
+        socket.broadcast.to(message.salaId).emit('escucharEventoMensaje', nuevoMensaje);
+        return 'ok'
+    }
 }
