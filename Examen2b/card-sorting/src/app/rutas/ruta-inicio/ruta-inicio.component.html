@@ -9,11 +9,21 @@
       de usuario mediante tamaños de carta estandarizados en la industria.
     </p>
     <div class="contenedor-botones">
-      <button mat-flat-button color="primary">Nueva sala de juego</button>
-      <mat-form-field appearance="outline">
-        <mat-label>Ingresa un código de sala</mat-label>
-        <input matInput placeholder="Código de sala">
-      </mat-form-field>
+      <button mat-flat-button color="primary" (click)="crearSalaNueva()">Nueva sala de juego</button>
+      <form [formGroup]="formGroup" (ngSubmit)="unirseASala()">
+        <mat-form-field appearance="outline">
+          <mat-label>Ingresa un código de sala</mat-label>
+          <input matInput placeholder="Código de sala"
+                 formControlName="codigoSala"
+          >
+        </mat-form-field>
+        <button mat-button
+                type="submit"
+                [disabled]="formGroup.invalid"
+        >
+          Unirse
+        </button>
+      </form>
     </div>
   </section>
   <aside>

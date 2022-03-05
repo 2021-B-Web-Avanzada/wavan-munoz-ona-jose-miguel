@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backUrl: 'http://localhost:3000',
+  opcionesCartas: {
+    fibonacci: [0,1,2,3,5,8,13,21,34,55,89,'?'],
+    modFibonacci: [0,'1/2',1,2,3,5,8,13,20,40,100,'?'],
+    tshirts: ['xxs','xs','s','m','l','xl','xxl','?']
+  }
 };
 
 /*

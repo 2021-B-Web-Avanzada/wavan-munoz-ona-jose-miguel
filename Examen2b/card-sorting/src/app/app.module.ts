@@ -12,23 +12,33 @@ import { CartaComponent } from './componentes/carta/carta.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
+import {ReactiveFormsModule} from "@angular/forms";
+import { ModalNuevaSalaComponent } from './componentes/modal-nueva-sala/modal-nueva-sala.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {HttpClientModule} from "@angular/common/http";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
     AppComponent,
     RutaInicioComponent,
     CartaComponent,
+    ModalNuevaSalaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatGridListModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
