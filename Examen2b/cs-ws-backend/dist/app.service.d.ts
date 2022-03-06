@@ -3,6 +3,7 @@ export declare class AppService {
     salas: {
         idSala: string;
         baraja: string;
+        usuarios?: string[];
     }[];
     getHello(): string;
     generarNuevaSala(): string;
@@ -10,9 +11,12 @@ export declare class AppService {
     registrarSala(sala: {
         idSala: string;
         baraja: string;
+        usuarios?: string[];
     }): void;
     consultarSala(idSala: string): {
         idSala: string;
         baraja: string;
+        usuarios?: string[];
     };
+    registrarUsuarioEnSala(idSala: string, nombreUsuario: string): void;
 }

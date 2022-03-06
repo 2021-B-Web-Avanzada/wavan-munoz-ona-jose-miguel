@@ -14,6 +14,8 @@ export declare class AppController {
         sala: {
             idSala: string;
             baraja: string;
+            usuarios?: string[];
         };
     };
+    agregarUsuario(params: any, valor: any): void;
 }

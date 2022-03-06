@@ -34,6 +34,9 @@ let AppController = class AppController {
     consultarSala(params) {
         return { sala: this.appService.consultarSala(params.idSala) };
     }
+    agregarUsuario(params, valor) {
+        this.appService.registrarUsuarioEnSala(params.idSala, valor.nombreUsuario);
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -68,6 +71,14 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "consultarSala", null);
+__decorate([
+    (0, common_1.Post)('sala/:idSala/unirUsuario'),
+    __param(0, (0, common_1.Param)()),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "agregarUsuario", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

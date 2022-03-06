@@ -19,6 +19,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatSelectModule} from "@angular/material/select";
 import { ModalUnirseSalaComponent } from './componentes/modal-unirse-sala/modal-unirse-sala.component';
 import { RutaJuegoComponent } from './rutas/ruta-juego/ruta-juego.component';
+import {SocketIoModule} from "ngx-socket-io";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,11 @@ import { RutaJuegoComponent } from './rutas/ruta-juego/ruta-juego.component';
     MatIconModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    SocketIoModule.forRoot({
+      url:'ws://localhost:8080',
+      options: {}
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

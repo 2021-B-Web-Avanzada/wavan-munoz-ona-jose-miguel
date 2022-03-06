@@ -32,6 +32,12 @@ let AppService = class AppService {
     consultarSala(idSala) {
         return this.salas.find(sala => sala.idSala == idSala);
     }
+    registrarUsuarioEnSala(idSala, nombreUsuario) {
+        const sala = this.consultarSala(idSala);
+        if (sala) {
+            sala.usuarios.push(nombreUsuario);
+        }
+    }
 };
 AppService = __decorate([
     (0, common_1.Injectable)()

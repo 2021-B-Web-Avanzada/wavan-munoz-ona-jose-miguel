@@ -7,12 +7,12 @@ export declare class EventosGateway {
     cartaSeleccionada(mensaje: {
         nombre: string;
         idJuego: string;
-        carta: string;
+        carta: string | number;
     }, socket: Socket): string;
     cartaDeseleccionada(mensaje: {
         nombre: string;
         idJuego: string;
-        carta: string;
+        carta: string | number;
     }, socket: Socket): string;
     mostrarCartas(mensaje: {
         idJuego: string;

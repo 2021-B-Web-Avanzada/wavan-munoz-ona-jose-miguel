@@ -49,7 +49,8 @@ export class ModalNuevaSalaComponent implements OnInit {
     if(baraja && nombre){
       const sala:Sala = {
         idSala: this.identificadorSala,
-        baraja: baraja.value
+        baraja: baraja.value,
+        usuarios: [nombre.value]
       }
       this.apiService.crearSala(sala)
         .subscribe({

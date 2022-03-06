@@ -4,7 +4,7 @@ import {Injectable} from '@nestjs/common';
 export class AppService {
 
   caracteres:string[] = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-  salas:{idSala:string, baraja:string}[] = [];
+  salas:{idSala:string, baraja:string, usuarios?:string[]}[] = [];
   getHello(): string {
     return 'Hello World!';
   }
@@ -21,11 +21,18 @@ export class AppService {
     return this.salas.some(elemento => elemento.idSala == id);
   }
 
-  registrarSala(sala:{idSala:string, baraja:string}){
+  registrarSala(sala:{idSala:string, baraja:string, usuarios?:string[]}){
     this.salas.push(sala);
   }
 
   consultarSala(idSala:string){
     return this.salas.find(sala => sala.idSala == idSala);
+  }
+
+  registrarUsuarioEnSala(idSala:string, nombreUsuario:string){
+    const sala = this.consultarSala(idSala);
+    if(sala){
+      sala.usuarios.push(nombreUsuario);
+    }
   }
 }

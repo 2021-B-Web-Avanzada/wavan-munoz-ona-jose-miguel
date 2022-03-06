@@ -47,4 +47,11 @@ export class ConexionBackendService {
     const url = environment.backUrl + '/consultarSala/' + idSala;
     return this.clienteHttp.get<{sala?:Sala}>(url);
   }
+
+  registrarUsuarioEnSala(idSala:string,nombreUsuario:string){
+    const url = environment.backUrl + '/sala/'+idSala+'/unirUsuario';
+    return this.clienteHttp.post(url,
+      {nombreUsuario}
+      )
+  }
 }

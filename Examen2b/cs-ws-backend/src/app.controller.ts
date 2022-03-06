@@ -30,4 +30,8 @@ export class AppController {
     return {sala:this.appService.consultarSala(params.idSala)}
   }
 
+  @Post('sala/:idSala/unirUsuario')
+  agregarUsuario(@Param() params, @Body() valor){
+    this.appService.registrarUsuarioEnSala(params.idSala, valor.nombreUsuario)
+  }
 }

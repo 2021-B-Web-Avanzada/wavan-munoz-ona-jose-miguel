@@ -1,6 +1,5 @@
 import {ConnectedSocket, MessageBody, SubscribeMessage, WebSocketGateway} from "@nestjs/websockets";
 import {Socket} from 'socket.io';
-import {never} from "rxjs";
 
 @WebSocketGateway(8080,{
     cors: {
@@ -30,7 +29,7 @@ export class EventosGateway{
     @SubscribeMessage('cartaSeleccionada')
     cartaSeleccionada(
         @MessageBody()
-        mensaje: {nombre:string, idJuego:string, carta:string},
+        mensaje: {nombre:string, idJuego:string, carta:string|number},
         @ConnectedSocket()
         socket:Socket
     ){
@@ -47,7 +46,7 @@ export class EventosGateway{
     @SubscribeMessage('cartaDeseleccionada')
     cartaDeseleccionada(
         @MessageBody()
-            mensaje: {nombre:string, idJuego:string, carta:string},
+            mensaje: {nombre:string, idJuego:string, carta:string|number},
         @ConnectedSocket()
             socket:Socket
     ){
