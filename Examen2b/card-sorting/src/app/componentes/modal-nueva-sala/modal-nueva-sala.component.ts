@@ -1,8 +1,10 @@
 import {Component, Inject, Injectable, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {ConexionBackendService} from "../../servicios/http/conexion-backend.service";
 import {environment} from "../../../environments/environment";
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
+import {Sala} from "../../servicios/http/interfaces/Sala";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-modal-nueva-sala',
@@ -24,7 +26,10 @@ export class ModalNuevaSalaComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA)
     public data:any,
     private readonly api:ConexionBackendService,
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private readonly apiService:ConexionBackendService,
+    private enrutador:Router,
+    public referenciaDialogo: MatDialogRef<ModalNuevaSalaComponent>
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +41,24 @@ export class ModalNuevaSalaComponent implements OnInit {
           }
         }
       )
+  }
+
+  crearSala(){
+    const baraja = this.formGroup.get('listaCartas');
+    const nombre = this.formGroup.get('nombreUsuario')
+    if(baraja && nombre){
+      const sala:Sala = {
+        idSala: this.identificadorSala,
+        baraja: baraja.value
+      }
+      this.apiService.crearSala(sala)
+        .subscribe({
+          next: (element) => {
+            this.referenciaDialogo.close();
+            this.enrutador.navigate(['/juego',this.identificadorSala,nombre.value])
+          }
+        })
+    }
   }
 
 }

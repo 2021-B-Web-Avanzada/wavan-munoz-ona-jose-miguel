@@ -28,6 +28,12 @@ let AppController = class AppController {
     verificarSala(params) {
         return { validez: this.appService.comprobarSala(params.idSala) };
     }
+    crearSala(valor) {
+        this.appService.registrarSala(valor);
+    }
+    consultarSala(params) {
+        return { sala: this.appService.consultarSala(params.idSala) };
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -48,6 +54,20 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "verificarSala", null);
+__decorate([
+    (0, common_1.Post)('crearSala'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "crearSala", null);
+__decorate([
+    (0, common_1.Get)('consultarSala/:idSala'),
+    __param(0, (0, common_1.Param)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "consultarSala", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

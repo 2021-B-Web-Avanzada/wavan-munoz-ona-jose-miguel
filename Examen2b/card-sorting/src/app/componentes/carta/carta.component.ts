@@ -13,7 +13,7 @@ export class CartaComponent implements OnInit {
   anchoPer:number = 0;
 
   @Input()
-  valor:string = '';
+  valor:string|number = '';
 
   @Input()
   revelada:boolean = false;

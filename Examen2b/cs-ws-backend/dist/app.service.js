@@ -17,16 +17,20 @@ let AppService = class AppService {
         return 'Hello World!';
     }
     generarNuevaSala() {
-        const nuevaSala = [...Array(6)]
+        return [...Array(6)]
             .map((element) => {
             return this.caracteres[Math.random() * this.caracteres.length | 0];
         })
             .join('');
-        this.salas.push(nuevaSala);
-        return nuevaSala;
     }
     comprobarSala(id) {
-        return this.salas.some(elemento => elemento == id);
+        return this.salas.some(elemento => elemento.idSala == id);
+    }
+    registrarSala(sala) {
+        this.salas.push(sala);
+    }
+    consultarSala(idSala) {
+        return this.salas.find(sala => sala.idSala == idSala);
     }
 };
 AppService = __decorate([

@@ -1,6 +1,6 @@
 <h1>Nueva Sala</h1>
 <p>Identiicador de sala: {{identificadorSala}} </p>
-<form [formGroup]="formGroup">
+<form [formGroup]="formGroup" (ngSubmit)="crearSala()">
   <mat-form-field appearance="outline">
     <mat-label>Nombre de jugador</mat-label>
     <input matInput formControlName="nombreUsuario">

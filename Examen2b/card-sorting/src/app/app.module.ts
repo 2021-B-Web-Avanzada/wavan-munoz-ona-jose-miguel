@@ -17,6 +17,8 @@ import { ModalNuevaSalaComponent } from './componentes/modal-nueva-sala/modal-nu
 import {MatDialogModule} from "@angular/material/dialog";
 import {HttpClientModule} from "@angular/common/http";
 import {MatSelectModule} from "@angular/material/select";
+import { ModalUnirseSalaComponent } from './componentes/modal-unirse-sala/modal-unirse-sala.component';
+import { RutaJuegoComponent } from './rutas/ruta-juego/ruta-juego.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import {MatSelectModule} from "@angular/material/select";
     RutaInicioComponent,
     CartaComponent,
     ModalNuevaSalaComponent,
+    ModalUnirseSalaComponent,
+    RutaJuegoComponent,
   ],
   imports: [
     BrowserModule,

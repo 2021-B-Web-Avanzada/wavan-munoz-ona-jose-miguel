@@ -9,4 +9,11 @@ export declare class AppController {
     verificarSala(params: any): {
         validez: boolean;
     };
+    crearSala(valor: any): void;
+    consultarSala(params: any): {
+        sala: {
+            idSala: string;
+            baraja: string;
+        };
+    };
 }

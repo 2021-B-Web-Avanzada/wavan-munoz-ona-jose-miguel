@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+#logo{
+  font-family: 'Staatliches', cursive;
+  font-size: xx-large;
+  color: var(--c-logo);
+}
+
+mat-toolbar{
+  height: 10vh;
+  background-color: #f5f6fa;
+}
+
+.espaciado {
+  flex: 1 1 auto;
+}
+
+main, footer{
+  padding: 0 16px;
+}
+
+.tablero{
+  height: 65vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartero{
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-respuestas{
+  background-color: #ccdbfd;
+  width: 80%;
+  height: 75%;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 2% 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.transparent{
+  border: none;
+  background-color: transparent;
+}
+
+.espacio-carta{
+  background-color: white;
+  border-radius: 15px;
+  border: none;
+  width: 105px;
+  padding: 0 1px;
+  height: 130px;
+}
+
+.carta-usuario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 5px;
+}

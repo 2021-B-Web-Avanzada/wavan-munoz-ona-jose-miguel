@@ -1,4 +1,4 @@
-import {Controller, Get, Param} from '@nestjs/common';
+import {Body, Controller, Get, Param, Post} from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -18,6 +18,16 @@ export class AppController {
   @Get(':idSala/verificar')
   verificarSala(@Param() params) {
     return {validez: this.appService.comprobarSala(params.idSala)}
+  }
+
+  @Post('crearSala')
+  crearSala(@Body() valor){
+    this.appService.registrarSala(valor)
+  }
+
+  @Get('consultarSala/:idSala')
+  consultarSala(@Param() params){
+    return {sala:this.appService.consultarSala(params.idSala)}
   }
 
 }

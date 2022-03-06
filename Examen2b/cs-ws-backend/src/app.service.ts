@@ -1,25 +1,31 @@
-import { Injectable } from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 
 @Injectable()
 export class AppService {
 
   caracteres:string[] = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-  salas:string[] = [];
+  salas:{idSala:string, baraja:string}[] = [];
   getHello(): string {
     return 'Hello World!';
   }
 
   generarNuevaSala():string{
-    const nuevaSala = [...Array(6)]
+    return [...Array(6)]
         .map((element) => {
-          return this.caracteres[Math.random()*this.caracteres.length|0]
+          return this.caracteres[Math.random() * this.caracteres.length | 0]
         })
         .join('');
-    this.salas.push(nuevaSala);
-    return nuevaSala;
   }
 
   comprobarSala(id:string):boolean{
-    return this.salas.some(elemento => elemento == id);
+    return this.salas.some(elemento => elemento.idSala == id);
+  }
+
+  registrarSala(sala:{idSala:string, baraja:string}){
+    this.salas.push(sala);
+  }
+
+  consultarSala(idSala:string){
+    return this.salas.find(sala => sala.idSala == idSala);
   }
 }
