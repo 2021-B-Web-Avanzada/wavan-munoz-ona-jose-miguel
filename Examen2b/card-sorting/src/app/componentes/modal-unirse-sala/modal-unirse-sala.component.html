@@ -1,0 +1,13 @@
+<h1>Uniendote a sala</h1>
+<form [formGroup]="formGroup" (ngSubmit)="unirseSala()">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre de jugador</mat-label>
+    <input matInput formControlName="nombreUsuario">
+  </mat-form-field>
+  <button mat-flat-button color="accent"
+          [disabled]="!formGroup.valid"
+          type="submit"
+  >
+    Unirse
+  </button>
+</form>

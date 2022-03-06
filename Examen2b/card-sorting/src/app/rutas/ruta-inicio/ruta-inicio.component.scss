@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+#logo{
+  font-family: 'Staatliches', cursive;
+  font-size: xx-large;
+  color: var(--c-logo);
+}
+
+mat-toolbar{
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+  height: 10vh;
+}
+
+.separator{
+  height: 90vh;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h1{
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: xx-large;
+}
+
+.separator > section, aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  color: var(--c-electromagnetic);
+  align-items: start;
+}
+
+.contenedor-botones{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 55px;
+}
+
+mat-form-field{
+  margin-left: 10px;
+}
+
+.f-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+

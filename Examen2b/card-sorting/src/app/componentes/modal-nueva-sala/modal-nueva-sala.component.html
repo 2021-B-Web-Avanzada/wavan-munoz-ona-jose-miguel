@@ -1,0 +1,29 @@
+<h1>Nueva Sala</h1>
+<p>Identiicador de sala: {{identificadorSala}} </p>
+<form [formGroup]="formGroup" (ngSubmit)="crearSala()">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre de jugador</mat-label>
+    <input matInput formControlName="nombreUsuario">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Mazo de cartas</mat-label>
+    <mat-select formControlName="listaCartas">
+      <mat-option [value]="'fibonacci'" >
+        Fibonacci {{cartas.fibonacci}}
+      </mat-option>
+      <mat-option [value]="'modFibonacci'">
+        Fibonacci Modificada {{cartas.modFibonacci}}
+      </mat-option>
+      <mat-option [value]="'tshirts'">
+        Camiseras {{cartas.tshirts}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-flat-button color="accent"
+          [disabled]="!formGroup.valid"
+          type="submit"
+  >
+    Crear sala
+  </button>
+</form>
+

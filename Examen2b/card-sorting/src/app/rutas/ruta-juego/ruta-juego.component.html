@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <span id="logo">Planning Poker {{infoSala?.idSala}}</span>
+  <span class="espaciado">
+  </span>
+  <button mat-stroked-button color="primary" (click)="revelarCartas()">Revelar cartas</button>
+  <button mat-stroked-button (click)="nuevaVotacion()">Nueva votación</button>
+</mat-toolbar>
+<main class="tablero">
+  <div class="contenedor-respuestas">
+    <div class="carta-usuario" *ngFor="let usuario of listaUsuarios">
+      <strong>{{usuario.nombreUsuario}}</strong>
+      <button class="espacio-carta">
+        <app-carta *ngIf="usuario.cartaSeleccionada"
+          [revelada]="cartasReveladas"
+          [anchoPer]="100"
+          [alturaPer]="120"
+          [valor]="usuario.valorCarta!!"
+        ></app-carta>
+      </button>
+    </div>
+  </div>
+</main>
+<footer class="cartero">
+  <button class="transparent"
+          *ngFor="let carta of baraja"
+          (click)="cartaSeleccionada(carta)"
+  >
+    <app-carta
+      [revelada]="true"
+      [anchoPer]="80"
+      [alturaPer]="130"
+      [valor]="carta"
+    >
+    </app-carta>
+  </button>
+</footer>

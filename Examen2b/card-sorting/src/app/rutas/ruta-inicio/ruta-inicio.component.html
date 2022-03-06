@@ -1,0 +1,47 @@
+<mat-toolbar>
+  <span id="logo">Planning Poker</span>
+</mat-toolbar>
+<main class="separator">
+  <section>
+    <h1>La aplicación definitiva para estimar historias de usuario</h1>
+    <p>
+      Colabora con todos los miembros de tu equipo para determinar qué tan grande (o pequeña) debe ser una historia
+      de usuario mediante tamaños de carta estandarizados en la industria.
+    </p>
+    <div class="contenedor-botones">
+      <button mat-flat-button color="primary" (click)="crearSalaNueva()">Nueva sala de juego</button>
+      <form [formGroup]="formGroup" (ngSubmit)="unirseASala()">
+        <mat-form-field appearance="outline">
+          <mat-label>Ingresa un código de sala</mat-label>
+          <input matInput placeholder="Código de sala"
+                 formControlName="codigoSala"
+          >
+        </mat-form-field>
+        <button mat-button
+                type="submit"
+                [disabled]="formGroup.invalid"
+        >
+          Unirse
+        </button>
+      </form>
+    </div>
+  </section>
+  <aside>
+    <div class="f-row">
+      <app-carta
+        [alturaPer]="200"
+        [anchoPer]="150"
+        [valor]="'14'"
+        [revelada]="true"
+      >
+      </app-carta>
+      <app-carta
+        [alturaPer]="200"
+        [anchoPer]="150"
+        [valor]="'9'"
+        [revelada]="false"
+      >
+      </app-carta>
+    </div>
+  </aside>
+</main>
